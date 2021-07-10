@@ -6,14 +6,14 @@ session_start();
 require_once('funcs.php');
 
 //ログインチェック
-loginCheck();
+// loginCheck();
 $user_name= $_SESSION['name'];
 
 //以下ログインユーザーのみ
 
 $pdo = db_conn();
 //２．データ登録SQL作成
-$stmt = $pdo->prepare("SELECT * FROM gs_an_table");
+$stmt = $pdo->prepare("SELECT * FROM carbon_record");
 $status = $stmt->execute();
 
 //３．データ表示
@@ -24,8 +24,8 @@ if($status==false) {
   while( $r = $stmt->fetch(PDO::FETCH_ASSOC)){ 
     $view .= '<p>';
     $view .= '<a href="detail.php?id='.$r["id"].'">';
-    $view .= $r["id"]."|".$r["name"]."|".$r["email"];
-    $view .= '</a>';
+    $view .= $r["id"]."|".$r["eventname"]."|".$r["amount"]."|".$r["date"];
+        $view .= '</a>';
     $view .= "　";
     $view .= '<a class="btn btn-danger" href="delete.php?id='.$r["id"].'">';
     $view .= '[<i class="glyphicon glyphicon-remove"></i>削除]';

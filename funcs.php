@@ -7,10 +7,10 @@ function h($str){
 //DB接続
 function db_conn(){
   try {
-    $db_name = "brownturtle3_gs_db";    //データベース名
-    $db_id   = "brownturtle3";      //アカウント名
-    $db_pw   = "05kawahara_22nishimura";      //パスワード：XAMPPはパスワード無しに修正してください。
-    $db_host = "mysql57.brownturtle3.sakura.ne.jp"; //DBホスト
+    $db_name = "carbon";    //データベース名
+    $db_id   = "root";      //アカウント名
+    $db_pw   = "root";      //パスワード：XAMPPはパスワード無しに修正してください。
+    $db_host = "localhost"; //DBホスト
     $pdo = new PDO('mysql:dbname=' . $db_name . ';charset=utf8;host=' . $db_host, $db_id, $db_pw);
     return $pdo;//ここを追加！！
   } catch (PDOException $e) {
