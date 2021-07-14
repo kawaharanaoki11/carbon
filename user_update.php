@@ -20,9 +20,9 @@ $pdo = db_conn();
 
 //3.データ登録SQL作成
 if($lpw==""){
-    $sql = "UPDATE gs_user_table SET name=:name,lid=:lid,kanri_flg=:kanri_flg,life_flg=:life_flg WHERE id=:id";
+    $sql = "UPDATE carbon_user_table SET name=:name,lid=:lid,kanri_flg=:kanri_flg,life_flg=:life_flg WHERE id=:id";
 }else{
-    $sql = "UPDATE gs_user_table SET name=:name,lid=:lid,lpw=:lpw,kanri_flg=:kanri_flg,life_flg=:life_flg WHERE id=:id";
+    $sql = "UPDATE carbon_user_table SET name=:name,lid=:lid,lpw=:lpw,kanri_flg=:kanri_flg,life_flg=:life_flg WHERE id=:id";
 }
 //4.SQL
 $stmt = $pdo->prepare($sql);

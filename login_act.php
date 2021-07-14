@@ -11,7 +11,7 @@ require_once('funcs.php');
 $pdo = db_conn();
 
 //2. データ登録SQL作成
-$stmt = $pdo->prepare("SELECT * FROM gs_user_table WHERE lid = :lid");
+$stmt = $pdo->prepare("SELECT * FROM carbon_user_table WHERE lid = :lid");
 $stmt->bindValue(':lid',$lid, PDO::PARAM_STR);
 // $stmt->bindValue(':lpw',$lpw, PDO::PARAM_STR); //* Hash化する場合はコメントする
 $status = $stmt->execute();

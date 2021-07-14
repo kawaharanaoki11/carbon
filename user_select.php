@@ -9,7 +9,7 @@ loginCheck();
 $pdo = db_conn();
 
 //２．データ登録SQL作成
-$stmt = $pdo->prepare("SELECT * FROM gs_user_table");
+$stmt = $pdo->prepare("SELECT * FROM carbon_user_table");
 $status = $stmt->execute();
 
 //３．データ表示
